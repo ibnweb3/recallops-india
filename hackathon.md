@@ -7,7 +7,7 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 - **One line:** An agent that takes an official Indian drug-quality alert (CDSCO "Not of Standard Quality" batches), reconciles it against a distributor's messy stock and invoice records, places verified digital holds, traces where held batches went, and proves what it did.
 - **Track:** Build an agent that works (the only track)
 - **Problem it solves:** CDSCO publishes a monthly list of drug batches that failed quality tests, and stockists, distributors and retailers are expected to find and withdraw those exact batches. The alert is a PDF table (product, batch, manufacturing and expiry month, manufacturer, failed test); the stock is in someone's billing software. Matching them is slow and error-prone: brand versus generic names, strengths inside names, odd batch formats, month-only dates. A failure is specific to a tested batch, so wrongly holding other batches costs money and missing a listed batch is a safety risk.
-- **Public repo:** <url, not created yet>
+- **Public repo:** https://github.com/ibnweb3/recallops-india (private for now; to be made public on Oct 12 after a secrets check)
 - **Demo video (3 min max):** <url, filled in on Oct 12>
 
 ## 2. Team
