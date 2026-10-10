@@ -52,7 +52,7 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 
 ## 6. Plan vs completed (keep both lists honest)
 ### Planned (not done yet)
-- [ ] Extract 3 monthly CDSCO NSQ PDFs to structured JSON and confirm the format is stable across months
+- [ ] Confirm the alert format across more months. Only March 2025 is parsed so far. CDSCO now publishes newer alerts through an online portal (cdscoonline.gov.in) with year/month/source filters instead of PDFs; its table has not been read yet
 - [ ] Fixture generator: stock, invoices and downstream sales built from real batches in the real alerts (labelled synthetic)
 - [ ] Naive baseline: name-only matching ("before")
 - [ ] Agent loop: rules, matching, investigation of ambiguous rows, holds, read-back
@@ -65,6 +65,7 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 - [ ] Demo video + README + submission post
 
 ### Completed (move items here only when they work, with the date)
+- 2026-10-10: CDSCO NSQ alert parser (recallops/alerts.py) parses the real March 2025 alert into 70 entries (S.No 1-70), joining entries split across page breaks and handling one DD/MM/YYYY date; 6 tests pass.
 - 2026-10-10: Entire CLI 0.11.4 installed; Python 3.13 environment with neatlogs 1.4.26; neatlogs local doctor and end-to-end probe passed.
 
 ## 7. Build log (newest at the bottom; one entry per session; never delete)
@@ -85,6 +86,14 @@ Entry format:
 - **Tests actually run:** `neatlogs doctor --probe` passed (8 of 8 checks). A one-off pdfplumber extraction of the March 2025 CDSCO NSQ alert returned a clean table (9 pages, about 76 entries); only that one month has been checked so far.
 - **Evidence added:** none yet.
 - **Next:** extract more months and confirm the format; fixtures; baseline.
+
+### 2026-10-10 20:30 (IST) | alert parser on the real March 2025 CDSCO PDF
+- **What changed:** recallops/alerts.py (PDF to structured entries), tests/test_alerts.py, data/alerts/raw/NSQ-2025-03.pdf (public CDSCO document), data/alerts/parsed/NSQ-2025-03.json, requirements.txt.
+- **Decisions and why:** keep the raw cell text next to every parsed field so nothing is lost. Dates stay month-level ("YYYY-MM") because the alerts give month/year only.
+- **Experiments / failures / fixes:** the first parse gave 73 rows for 70 real entries: three entries are split across page breaks (a fragment with no S.No and no batch at the top of the next page), and one row writes dates as DD/MM/YYYY. Fixed by joining fragments onto the previous entry and keeping the month from the full date. Scripted requests to cdsco.gov.in returned 403 and guessed file names for other months returned 404, so only the March 2025 file (fetched through the web-fetch tool) is in the repo. Newer months are on an online portal that has not been read yet.
+- **Tests actually run:** `python -m pytest -q` -> 6 passed. Expected values were read from the PDF itself.
+- **Evidence added:** none yet.
+- **Next:** read a newer month from the CDSCO portal; fixture generator; naive baseline.
 
 ## 8. Demo details
 - **Length:** 3 min max. Must cover neatlogs, Entire and cfo.ai: architecture, implementation, runtime, reasoning, result for each.
