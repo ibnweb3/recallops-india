@@ -87,7 +87,7 @@ Entry format:
 - **Evidence added:** none yet.
 - **Next:** extract more months and confirm the format; fixtures; baseline.
 
-### 2026-10-10 20:30 (IST) | alert parser on the real March 2025 CDSCO PDF
+### 2026-10-10 19:15 (IST) | alert parser on the real March 2025 CDSCO PDF
 - **What changed:** recallops/alerts.py (PDF to structured entries), tests/test_alerts.py, data/alerts/raw/NSQ-2025-03.pdf (public CDSCO document), data/alerts/parsed/NSQ-2025-03.json, requirements.txt.
 - **Decisions and why:** keep the raw cell text next to every parsed field so nothing is lost. Dates stay month-level ("YYYY-MM") because the alerts give month/year only.
 - **Experiments / failures / fixes:** the first parse gave 73 rows for 70 real entries: three entries are split across page breaks (a fragment with no S.No and no batch at the top of the next page), and one row writes dates as DD/MM/YYYY. Fixed by joining fragments onto the previous entry and keeping the month from the full date. Scripted requests to cdsco.gov.in returned 403 and guessed file names for other months returned 404, so only the March 2025 file (fetched through the web-fetch tool) is in the repo. Newer months are on an online portal that has not been read yet.
