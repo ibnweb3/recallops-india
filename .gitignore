@@ -1,0 +1,17 @@
+# secrets and local environment
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# pre-event planning notes (not part of the hackathon work)
+build-plan.md
+docs-notes.md
+hackathon.template.md
+
+# local run output; the sanitized evidence/ folder is committed instead
+runs/
+*.log
