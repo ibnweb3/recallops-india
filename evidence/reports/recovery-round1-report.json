@@ -1,0 +1,197 @@
+{
+ "round": "1",
+ "alert_rows": 239,
+ "scope_note": "A CDSCO NSQ finding is specific to the tested batch. 'No hold' means the batch is not on the alerts read; it is not a safety clearance. A digital hold does not prove physical removal.",
+ "counts": {
+  "hold": 61,
+  "review": 12,
+  "no_hold": 266
+ },
+ "reopened_decisions": [],
+ "acted": {
+  "placed": 61,
+  "already_held": 0,
+  "conflicts": 0
+ },
+ "verification": {
+  "intended_holds": 61,
+  "held_in_service": 61,
+  "hold_events": 61,
+  "duplicate_hold_events": 0,
+  "problems": [],
+  "ledger_gaps": [
+   {
+    "item_code": "IT0011",
+    "batch": "0PZDC4059",
+    "stock_units": 378,
+    "purchased_minus_sold": 389,
+    "difference": -11,
+    "blank_batch_units_on_item": 11,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0058",
+    "batch": "FAM677",
+    "stock_units": 195,
+    "purchased_minus_sold": 255,
+    "difference": -60,
+    "blank_batch_units_on_item": 60,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0015",
+    "batch": "AV26072",
+    "stock_units": 44,
+    "purchased_minus_sold": 46,
+    "difference": -2,
+    "blank_batch_units_on_item": 2,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0013",
+    "batch": "H084",
+    "stock_units": 28,
+    "purchased_minus_sold": 51,
+    "difference": -23,
+    "blank_batch_units_on_item": 23,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0037",
+    "batch": "CG250392A",
+    "stock_units": 70,
+    "purchased_minus_sold": 135,
+    "difference": -65,
+    "blank_batch_units_on_item": 65,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0050",
+    "batch": "MT251013",
+    "stock_units": 47,
+    "purchased_minus_sold": 66,
+    "difference": -19,
+    "blank_batch_units_on_item": 19,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0056",
+    "batch": "41410",
+    "stock_units": 185,
+    "purchased_minus_sold": 295,
+    "difference": -110,
+    "blank_batch_units_on_item": 110,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0053",
+    "batch": "JDB766",
+    "stock_units": 200,
+    "purchased_minus_sold": 323,
+    "difference": -123,
+    "blank_batch_units_on_item": 123,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0009",
+    "batch": "FMX03026",
+    "stock_units": 45,
+    "purchased_minus_sold": 63,
+    "difference": -18,
+    "blank_batch_units_on_item": 18,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0040",
+    "batch": "LTA45315A",
+    "stock_units": 314,
+    "purchased_minus_sold": 327,
+    "difference": -13,
+    "blank_batch_units_on_item": 13,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0006",
+    "batch": "18260226A",
+    "stock_units": 65,
+    "purchased_minus_sold": 79,
+    "difference": -14,
+    "blank_batch_units_on_item": 14,
+    "explained_by_blank_batch_invoice_lines": true
+   }
+  ]
+ },
+ "downstream": {
+  "customers_exposed": 44,
+  "unresolved_invoice_lines": 13
+ },
+ "needs_human_review": [
+  "S0013",
+  "S0022",
+  "S0030",
+  "S0046",
+  "S0053",
+  "S0068",
+  "S0169",
+  "S0170",
+  "S0171",
+  "S0172",
+  "S0173",
+  "S0174"
+ ],
+ "drafts": {
+  "drafts": 92,
+  "model_drafted": 12,
+  "folder": "runs\\live-agent-recovery\\round1\\outbox"
+ },
+ "recovery_events": [
+  {
+   "event": "timeout_after_write",
+   "stock_id": "S0001",
+   "recovery": "read back: row is HELD, retry not needed"
+  },
+  {
+   "event": "timeout_after_write",
+   "stock_id": "S0002",
+   "recovery": "read back: row is HELD, retry not needed"
+  },
+  {
+   "event": "timeout_after_write",
+   "stock_id": "S0003",
+   "recovery": "read back: row is HELD, retry not needed"
+  }
+ ],
+ "llm_calls_this_round": 17,
+ "alias_judgements": [
+  {
+   "stock": "Amoxicillin & Potassium Clavulanate, Lactic Acid Bacillus Tablets",
+   "alert": "Cefixime & Azithromycin Tablets",
+   "same": "no",
+   "why": "Different active ingredients"
+  },
+  {
+   "stock": "Acetaminophen Tablets IP 650mg",
+   "alert": "Paracetamol Tablets IP 650mg",
+   "same": "yes",
+   "why": "Same active ingredient, different name"
+  },
+  {
+   "stock": "Acetaminophen Tablets IP 650 mg",
+   "alert": "Paracetamol Tablets IP 650 mg",
+   "same": "yes",
+   "why": "Same active ingredient, different name"
+  },
+  {
+   "stock": "Acetaminophen Tablets IP 500 mg",
+   "alert": "Paracetamol Tablets IP 500 mg",
+   "same": "yes",
+   "why": "Same active ingredient"
+  },
+  {
+   "stock": "Enalmet-5, Enalapril Maleate Tablets IP 5 mg",
+   "alert": "Betamethasone valerate & Salicylic Acid Ointment",
+   "same": "no",
+   "why": "Different active ingredients"
+  }
+ ]
+}

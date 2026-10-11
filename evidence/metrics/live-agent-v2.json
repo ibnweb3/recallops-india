@@ -1,0 +1,56 @@
+{
+ "1": {
+  "correct_hold": 61,
+  "missed_hold": 0,
+  "wrong_hold": 0,
+  "review_ok": 11,
+  "review_held": 0,
+  "review_cleared": 0,
+  "needless_review": 1,
+  "expected_holds": 61,
+  "total_rows": 339,
+  "customers_exposed": 44,
+  "customers_found": 44,
+  "customers_extra": 0,
+  "seconds": 35.26,
+  "llm_calls": 17,
+  "reopened": 0,
+  "recovery_events": 0,
+  "duplicate_hold_events": 0,
+  "verification_problems": 0,
+  "unresolved_invoice_lines": 13
+ },
+ "2": {
+  "correct_hold": 92,
+  "missed_hold": 0,
+  "wrong_hold": 0,
+  "review_ok": 11,
+  "review_held": 0,
+  "review_cleared": 0,
+  "needless_review": 1,
+  "expected_holds": 93,
+  "total_rows": 339,
+  "customers_exposed": 54,
+  "customers_found": 54,
+  "customers_extra": 0,
+  "seconds": 25.41,
+  "llm_calls": 14,
+  "reopened": 32,
+  "recovery_events": 0,
+  "duplicate_hold_events": 0,
+  "verification_problems": 0,
+  "unresolved_invoice_lines": 17
+ },
+ "llm_usage": {
+  "calls": 31,
+  "prompt_tokens": 5326,
+  "completion_tokens": 3413
+ },
+ "_run": {
+  "name": "live-agent-v2",
+  "mode": "agent",
+  "traced": true,
+  "seconds": 60.74,
+  "inject_timeout": 0
+ }
+}

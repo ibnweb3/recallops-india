@@ -1,0 +1,35 @@
+{
+ "1": {
+  "correct_hold": 56,
+  "missed_hold": 5,
+  "wrong_hold": 87,
+  "review_ok": 0,
+  "review_held": 6,
+  "review_cleared": 5,
+  "needless_review": 0,
+  "expected_holds": 61,
+  "total_rows": 339,
+  "seconds": 1.64,
+  "llm_calls": 0
+ },
+ "2": {
+  "correct_hold": 80,
+  "missed_hold": 13,
+  "wrong_hold": 110,
+  "review_ok": 0,
+  "review_held": 6,
+  "review_cleared": 5,
+  "needless_review": 0,
+  "expected_holds": 93,
+  "total_rows": 339,
+  "seconds": 2.73,
+  "llm_calls": 0
+ },
+ "_run": {
+  "name": "live-baseline",
+  "mode": "baseline",
+  "traced": true,
+  "seconds": 4.38,
+  "inject_timeout": 0
+ }
+}

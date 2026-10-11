@@ -1,0 +1,413 @@
+{
+ "round": "2",
+ "alert_rows": 459,
+ "scope_note": "A CDSCO NSQ finding is specific to the tested batch. 'No hold' means the batch is not on the alerts read; it is not a safety clearance. A digital hold does not prove physical removal.",
+ "counts": {
+  "hold": 92,
+  "review": 12,
+  "no_hold": 235
+ },
+ "reopened_decisions": [
+  {
+   "stock_id": "S0067",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0068",
+   "was": "review",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0069",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0070",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and dates agree"
+  },
+  {
+   "stock_id": "S0071",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0072",
+   "was": "no_hold",
+   "now": "review",
+   "why": "alias check says a different product, but batch, manufacturer and dates all agree: escalated, not cleared"
+  },
+  {
+   "stock_id": "S0073",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0074",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0075",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0076",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0077",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0078",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0079",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0080",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0081",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0082",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0083",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0084",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0085",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0086",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0087",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0088",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0089",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0090",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0091",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0092",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0093",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0094",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and dates agree"
+  },
+  {
+   "stock_id": "S0095",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0096",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0097",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  },
+  {
+   "stock_id": "S0098",
+   "was": "no_hold",
+   "now": "hold",
+   "why": "batch, product and manufacturer agree"
+  }
+ ],
+ "acted": {
+  "placed": 31,
+  "already_held": 61,
+  "conflicts": 0
+ },
+ "verification": {
+  "intended_holds": 92,
+  "held_in_service": 92,
+  "hold_events": 92,
+  "duplicate_hold_events": 0,
+  "problems": [],
+  "ledger_gaps": [
+   {
+    "item_code": "IT0065",
+    "batch": "VGT509",
+    "stock_units": 12,
+    "purchased_minus_sold": 19,
+    "difference": -7,
+    "blank_batch_units_on_item": 7,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0037",
+    "batch": "CG250392A",
+    "stock_units": 70,
+    "purchased_minus_sold": 135,
+    "difference": -65,
+    "blank_batch_units_on_item": 65,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0053",
+    "batch": "JDB766",
+    "stock_units": 200,
+    "purchased_minus_sold": 323,
+    "difference": -123,
+    "blank_batch_units_on_item": 123,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0050",
+    "batch": "MT251013",
+    "stock_units": 47,
+    "purchased_minus_sold": 66,
+    "difference": -19,
+    "blank_batch_units_on_item": 19,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0009",
+    "batch": "FMX03026",
+    "stock_units": 45,
+    "purchased_minus_sold": 63,
+    "difference": -18,
+    "blank_batch_units_on_item": 18,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0011",
+    "batch": "0PZDC4059",
+    "stock_units": 378,
+    "purchased_minus_sold": 389,
+    "difference": -11,
+    "blank_batch_units_on_item": 11,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0067",
+    "batch": "592519",
+    "stock_units": 156,
+    "purchased_minus_sold": 312,
+    "difference": -156,
+    "blank_batch_units_on_item": 156,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0006",
+    "batch": "18260226A",
+    "stock_units": 65,
+    "purchased_minus_sold": 79,
+    "difference": -14,
+    "blank_batch_units_on_item": 14,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0058",
+    "batch": "FAM677",
+    "stock_units": 195,
+    "purchased_minus_sold": 255,
+    "difference": -60,
+    "blank_batch_units_on_item": 60,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0015",
+    "batch": "AV26072",
+    "stock_units": 44,
+    "purchased_minus_sold": 46,
+    "difference": -2,
+    "blank_batch_units_on_item": 2,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0013",
+    "batch": "H084",
+    "stock_units": 28,
+    "purchased_minus_sold": 51,
+    "difference": -23,
+    "blank_batch_units_on_item": 23,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0056",
+    "batch": "41410",
+    "stock_units": 185,
+    "purchased_minus_sold": 295,
+    "difference": -110,
+    "blank_batch_units_on_item": 110,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0079",
+    "batch": "25438",
+    "stock_units": 27,
+    "purchased_minus_sold": 132,
+    "difference": -105,
+    "blank_batch_units_on_item": 105,
+    "explained_by_blank_batch_invoice_lines": true
+   },
+   {
+    "item_code": "IT0040",
+    "batch": "LTA45315A",
+    "stock_units": 314,
+    "purchased_minus_sold": 327,
+    "difference": -13,
+    "blank_batch_units_on_item": 13,
+    "explained_by_blank_batch_invoice_lines": true
+   }
+  ]
+ },
+ "downstream": {
+  "customers_exposed": 54,
+  "unresolved_invoice_lines": 17
+ },
+ "needs_human_review": [
+  "S0013",
+  "S0022",
+  "S0030",
+  "S0046",
+  "S0053",
+  "S0072",
+  "S0169",
+  "S0170",
+  "S0171",
+  "S0172",
+  "S0173",
+  "S0174"
+ ],
+ "drafts": {
+  "drafts": 121,
+  "model_drafted": 12,
+  "folder": "runs\\live-agent-recovery\\round2\\outbox"
+ },
+ "recovery_events": [],
+ "llm_calls_this_round": 14,
+ "alias_judgements": [
+  {
+   "stock": "Amoxicillin & Potassium Clavulanate, Lactic Acid Bacillus Tablets",
+   "alert": "Cefixime & Azithromycin Tablets",
+   "same": "no",
+   "why": "Different active ingredients"
+  },
+  {
+   "stock": "Acetaminophen Tablets IP 650mg",
+   "alert": "Paracetamol Tablets IP 650mg",
+   "same": "yes",
+   "why": "Same active ingredient, different name"
+  },
+  {
+   "stock": "Acetaminophen Tablets IP 650 mg",
+   "alert": "Paracetamol Tablets IP 650 mg",
+   "same": "yes",
+   "why": "Same active ingredient, different name"
+  },
+  {
+   "stock": "Acetaminophen Tablets IP 500 mg",
+   "alert": "Paracetamol Tablets IP 500 mg",
+   "same": "yes",
+   "why": "Same active ingredient"
+  },
+  {
+   "stock": "Enalmet-5, Enalapril Maleate Tablets IP 5 mg",
+   "alert": "Betamethasone valerate & Salicylic Acid Ointment",
+   "same": "no",
+   "why": "Different active ingredients"
+  },
+  {
+   "stock": "Para+Phen+Caff TAB",
+   "alert": "Paracetamol, Phenylephrine Hydrochloride, Caffeine & Diphenhydramine Hydrochloride Tablets",
+   "same": "no",
+   "why": "Different combination of ingredients"
+  },
+  {
+   "stock": "Ibuprofen & Acetaminophen Tablets IP",
+   "alert": "Ibuprofen & Paracetamol Tablets IP",
+   "same": "yes",
+   "why": "Same active ingredients"
+  }
+ ]
+}
