@@ -1,0 +1,61 @@
+customer_id,name,type,city,state,contact_email,_synthetic
+C001,"[SYNTHETIC] Sai Medical Hall, Kolkata",pharmacy,Kolkata,WB,c001@example.invalid,Y
+C002,"[SYNTHETIC] Pioneer Medical Hall, Pune",pharmacy,Pune,MH,c002@example.invalid,Y
+C003,"[SYNTHETIC] Zenith Pharma Retail, Kolkata",pharmacy,Kolkata,WB,c003@example.invalid,Y
+C004,"[SYNTHETIC] Sai Medical Hall, Hyderabad",pharmacy,Hyderabad,TS,c004@example.invalid,Y
+C005,"[SYNTHETIC] Green Cross Chemist, Bhopal",pharmacy,Bhopal,MP,c005@example.invalid,Y
+C006,"[SYNTHETIC] Health First Chemist, Mumbai",pharmacy,Mumbai,MH,c006@example.invalid,Y
+C007,"[SYNTHETIC] Kalyan Medicals, Delhi",pharmacy,Delhi,DL,c007@example.invalid,Y
+C008,"[SYNTHETIC] Blue Cross Dispensary, Patna",pharmacy,Patna,BR,c008@example.invalid,Y
+C009,"[SYNTHETIC] Ocean View Pharmacy, Bengaluru",pharmacy,Bengaluru,KA,c009@example.invalid,Y
+C010,"[SYNTHETIC] Green Cross Chemist, Mumbai",pharmacy,Mumbai,MH,c010@example.invalid,Y
+C011,"[SYNTHETIC] Green Cross Chemist, Hyderabad",pharmacy,Hyderabad,TS,c011@example.invalid,Y
+C012,"[SYNTHETIC] Crest Clinic Dispensary, Lucknow",clinic,Lucknow,UP,c012@example.invalid,Y
+C013,"[SYNTHETIC] Trust Hospital Stores, Bengaluru",hospital,Bengaluru,KA,c013@example.invalid,Y
+C014,"[SYNTHETIC] City Medicals, Kochi",pharmacy,Kochi,KL,c014@example.invalid,Y
+C015,"[SYNTHETIC] Care Plus Clinic, Jaipur",clinic,Jaipur,RJ,c015@example.invalid,Y
+C016,"[SYNTHETIC] Evergreen Hospital Stores, Kochi",hospital,Kochi,KL,c016@example.invalid,Y
+C017,"[SYNTHETIC] Apex Hospital Pharmacy, Kolkata",hospital,Kolkata,WB,c017@example.invalid,Y
+C018,"[SYNTHETIC] Shree Drug Agency, Hyderabad",pharmacy,Hyderabad,TS,c018@example.invalid,Y
+C019,"[SYNTHETIC] Kalyan Medicals, Indore",pharmacy,Indore,MP,c019@example.invalid,Y
+C020,"[SYNTHETIC] Green Cross Chemist, Chennai",pharmacy,Chennai,TN,c020@example.invalid,Y
+C021,"[SYNTHETIC] Shree Drug Agency, Patna",pharmacy,Patna,BR,c021@example.invalid,Y
+C022,"[SYNTHETIC] Midtown Chemists, Hyderabad",pharmacy,Hyderabad,TS,c022@example.invalid,Y
+C023,"[SYNTHETIC] Silver Oak Medicos, Jaipur",pharmacy,Jaipur,RJ,c023@example.invalid,Y
+C024,"[SYNTHETIC] Lotus Chemists, Kochi",pharmacy,Kochi,KL,c024@example.invalid,Y
+C025,"[SYNTHETIC] Crest Clinic Dispensary, Indore",clinic,Indore,MP,c025@example.invalid,Y
+C026,"[SYNTHETIC] Unity Pharmacy, Patna",pharmacy,Patna,BR,c026@example.invalid,Y
+C027,"[SYNTHETIC] Midtown Chemists, Ahmedabad",pharmacy,Ahmedabad,GJ,c027@example.invalid,Y
+C028,"[SYNTHETIC] City Medicals, Bengaluru",pharmacy,Bengaluru,KA,c028@example.invalid,Y
+C029,"[SYNTHETIC] Pioneer Medical Hall, Kochi",pharmacy,Kochi,KL,c029@example.invalid,Y
+C030,"[SYNTHETIC] Health First Chemist, Kolkata",pharmacy,Kolkata,WB,c030@example.invalid,Y
+C031,"[SYNTHETIC] Zenith Pharma Retail, Chennai",pharmacy,Chennai,TN,c031@example.invalid,Y
+C032,"[SYNTHETIC] City Medicals, Lucknow",pharmacy,Lucknow,UP,c032@example.invalid,Y
+C033,"[SYNTHETIC] Care Plus Clinic, Bengaluru",clinic,Bengaluru,KA,c033@example.invalid,Y
+C034,"[SYNTHETIC] Shree Drug Agency, Jaipur",pharmacy,Jaipur,RJ,c034@example.invalid,Y
+C035,"[SYNTHETIC] Silver Oak Medicos, Hyderabad",pharmacy,Hyderabad,TS,c035@example.invalid,Y
+C036,"[SYNTHETIC] Nova Clinic Pharmacy, Bhopal",clinic,Bhopal,MP,c036@example.invalid,Y
+C037,"[SYNTHETIC] Metro Health Stores, Chennai",pharmacy,Chennai,TN,c037@example.invalid,Y
+C038,"[SYNTHETIC] Sunrise Pharmacy, Hyderabad",pharmacy,Hyderabad,TS,c038@example.invalid,Y
+C039,"[SYNTHETIC] Nova Clinic Pharmacy, Delhi",clinic,Delhi,DL,c039@example.invalid,Y
+C040,"[SYNTHETIC] Green Cross Chemist, Indore",pharmacy,Indore,MP,c040@example.invalid,Y
+C041,"[SYNTHETIC] Midtown Chemists, Jaipur",pharmacy,Jaipur,RJ,c041@example.invalid,Y
+C042,"[SYNTHETIC] Vista Health Mart, Chandigarh",pharmacy,Chandigarh,CH,c042@example.invalid,Y
+C043,"[SYNTHETIC] Orbit Medical Stores, Pune",pharmacy,Pune,MH,c043@example.invalid,Y
+C044,"[SYNTHETIC] Apex Hospital Pharmacy, Bengaluru",hospital,Bengaluru,KA,c044@example.invalid,Y
+C045,"[SYNTHETIC] Midtown Chemists, Chennai",pharmacy,Chennai,TN,c045@example.invalid,Y
+C046,"[SYNTHETIC] Shree Drug Agency, Ahmedabad",pharmacy,Ahmedabad,GJ,c046@example.invalid,Y
+C047,"[SYNTHETIC] Nova Clinic Pharmacy, Patna",clinic,Patna,BR,c047@example.invalid,Y
+C048,"[SYNTHETIC] Unity Pharmacy, Mumbai",pharmacy,Mumbai,MH,c048@example.invalid,Y
+C049,"[SYNTHETIC] Sai Medical Hall, Pune",pharmacy,Pune,MH,c049@example.invalid,Y
+C050,"[SYNTHETIC] Trust Hospital Stores, Pune",hospital,Pune,MH,c050@example.invalid,Y
+C051,"[SYNTHETIC] Green Cross Chemist, Patna",pharmacy,Patna,BR,c051@example.invalid,Y
+C052,"[SYNTHETIC] Apex Hospital Pharmacy, Bhopal",hospital,Bhopal,MP,c052@example.invalid,Y
+C053,"[SYNTHETIC] City Medicals, Indore",pharmacy,Indore,MP,c053@example.invalid,Y
+C054,"[SYNTHETIC] Lifeline Drug House, Delhi",pharmacy,Delhi,DL,c054@example.invalid,Y
+C055,"[SYNTHETIC] Silver Oak Medicos, Chennai",pharmacy,Chennai,TN,c055@example.invalid,Y
+C056,"[SYNTHETIC] Apex Hospital Pharmacy, Mumbai",hospital,Mumbai,MH,c056@example.invalid,Y
+C057,"[SYNTHETIC] Blue Cross Dispensary, Bhopal",pharmacy,Bhopal,MP,c057@example.invalid,Y
+C058,"[SYNTHETIC] Metro Health Stores, Mumbai",pharmacy,Mumbai,MH,c058@example.invalid,Y
+C059,"[SYNTHETIC] Crest Clinic Dispensary, Mumbai",clinic,Mumbai,MH,c059@example.invalid,Y
+C060,"[SYNTHETIC] Evergreen Hospital Stores, Pune",hospital,Pune,MH,c060@example.invalid,Y

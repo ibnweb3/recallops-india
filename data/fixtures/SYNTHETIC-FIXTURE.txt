@@ -1,0 +1,3 @@
+SYNTHETIC DATA. The distributor, customers, quantities, invoices and dates in this folder are invented.
+Only the alert rows they are built from (data/alerts/raw) are real CDSCO NSQ data.
+truth.json (the answer key) is for evaluation only and must not be given to the agent.
