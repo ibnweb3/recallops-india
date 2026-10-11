@@ -1,0 +1,51 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4NR4JCH0JD25DXQVA6692AM",
+  "session_id": "79c28916-176d-4ade-80a6-9d6de977ac83",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T15:08:57.1037399Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "data/fixtures/SYNTHETIC-FIXTURE.txt",
+    "data/fixtures/customers.csv",
+    "data/fixtures/items.csv",
+    "data/fixtures/purchases.csv",
+    "data/fixtures/sales.csv",
+    "data/fixtures/stock.csv",
+    "data/fixtures/truth.json",
+    "recallops/baseline.py",
+    "recallops/evaluate.py",
+    "recallops/fixtures.py",
+    "recallops/stockservice.py",
+    "tests/test_fixtures.py",
+    "tests/test_stock_and_baseline.py"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "33e87b7d4534",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 292,
+    "cache_creation_tokens": 421535,
+    "cache_read_tokens": 45739332,
+    "output_tokens": 234929,
+    "api_call_count": 146
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-11T15:08:56.9732871Z",
+    "agent_lines": 355,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 14607,
+    "human_removed": 0,
+    "total_committed": 14962,
+    "total_lines_changed": 14962,
+    "agent_percentage": 2.3726774495388314,
+    "metric_version": 2
+  }
+}

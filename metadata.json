@@ -1,0 +1,38 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4NR4JCH0JD25DXQVA6692AM",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "data/fixtures/SYNTHETIC-FIXTURE.txt",
+    "data/fixtures/customers.csv",
+    "data/fixtures/items.csv",
+    "data/fixtures/purchases.csv",
+    "data/fixtures/sales.csv",
+    "data/fixtures/stock.csv",
+    "data/fixtures/truth.json",
+    "recallops/baseline.py",
+    "recallops/evaluate.py",
+    "recallops/fixtures.py",
+    "recallops/stockservice.py",
+    "tests/test_fixtures.py",
+    "tests/test_stock_and_baseline.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 292,
+    "cache_creation_tokens": 421535,
+    "cache_read_tokens": 45739332,
+    "output_tokens": 234929,
+    "api_call_count": 146
+  }
+}
