@@ -1,0 +1,45 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4NR58V3YSZ6VEH4FPY864FN",
+  "session_id": "79c28916-176d-4ade-80a6-9d6de977ac83",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T15:09:09.6857478Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "evidence/metrics/live-agent-recovery.json",
+    "evidence/metrics/live-agent-v2.json",
+    "evidence/metrics/live-agent.json",
+    "evidence/metrics/live-baseline.json",
+    "evidence/reports/recovery-round1-report.json",
+    "evidence/reports/recovery-round2-report.json",
+    "hackathon.md"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "33e87b7d4534",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 292,
+    "cache_creation_tokens": 421535,
+    "cache_read_tokens": 45739332,
+    "output_tokens": 234929,
+    "api_call_count": 146
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-11T15:09:09.5288324Z",
+    "agent_lines": 46,
+    "agent_removed": 13,
+    "human_added": 0,
+    "human_modified": 832,
+    "human_removed": 0,
+    "total_committed": 878,
+    "total_lines_changed": 891,
+    "agent_percentage": 6.621773288439956,
+    "metric_version": 2
+  }
+}
