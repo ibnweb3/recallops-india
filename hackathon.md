@@ -26,16 +26,16 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 | neatlogs MCP / REST (reading cost and KPIs) | | planned |
 | Entire CLI | 0.11.4, `entire enable --agent claude-code` | in use |
 | entire-graph plugin | | planned |
-| cfo.ai (plan / CSV) | | planned |
+| cfo.ai (plan / CSV) | free workspace; Ari built a hypothesis-based unit-economics and runway model from our measured token usage | in use |
 | Other | | planned |
 
 ## 4. How each required tool is used (this feeds the 25% score and the video)
 | Tool | Role in building / running / planning | Evidence link or file | Done |
 |---|---|---|---|
 | neatlogs | traces for the baseline and the agent under separate workflow names; before/after cost, tokens, errors; cost alerts | exported from 4 runs (SDK counters: 0 export failures); trace links recorded in section 5 (private project, login needed); run metrics in evidence/metrics/ | [x] |
-| Entire (checkpoints) | every build session checkpointed; no secrets in transcripts | | [ ] |
+| Entire (checkpoints) | every build session checkpointed; no secrets in transcripts | evidence/entire/ (checkpoint list, explain, token view); 4 permanent checkpoints for 4 build steps; transcripts scanned for our key values on 2026-10-12: none found | [x] |
 | Entire (entire-graph) | | | [ ] |
-| cfo.ai | unit economics: price per resolved alert vs model cost per alert | | [ ] |
+| cfo.ai | unit economics: price per resolved alert vs model cost per alert | plan pages (private, login needed): https://app.cfo.ai/quick-katydid-282d8b64/pages/420adc7b-5fd2-4e0f-a0f9-2e099aeb4929 ; evidence/cfo-ai/ (summary and screenshots) | [x] |
 
 ## 5. Evidence checklist (judges verify these)
 - [x] Agent improved: before trace link + after trace link + the numbers compared (links are to a private neatlogs project and need a login; making them viewable by judges is not set up)
@@ -43,12 +43,12 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
   - After (workflowName / trace ids): recallops-agent. First run (before the added rule), trace a204710bdbc71cce221e7788af251e11: https://app.neatlogs.com/traces/a204710bdbc71cce221e7788af251e11?orgId=ce7719a1-83b3-44f9-bbb2-e503972e205f&projectId=81cd14fe-6d50-4a94-a711-53b905a7d30f ; after the added rule, trace 24a0438ea5b27de21487c1095a959374: https://app.neatlogs.com/traces/24a0438ea5b27de21487c1095a959374?orgId=ce7719a1-83b3-44f9-bbb2-e503972e205f&projectId=81cd14fe-6d50-4a94-a711-53b905a7d30f
   - Metrics (correct holds, wrong holds, missed holds, unresolved, tokens, cost USD, duration): round 1 (JUL alert) baseline 56/61 correct, 5 missed, 87 wrong holds; agent 61/61, 0 missed, 0 wrong. Round 2 (JUL+AUG) baseline 80/93, 13 missed, 110 wrong; agent 92/93, 0 missed, 0 wrong, 1 extra row sent to review. Agent run: 31 model calls, 5326 prompt + 3413 completion tokens (the same totals appear in the neatlogs trace), 60.7 s; baseline 4.4 s, no model calls. Cost USD: not read from neatlogs (the trace view I opened showed tokens and time only) and not computed. 13 invoice lines in round 1 and 17 in round 2 have no batch number and are listed as unresolved exposure. Source: evidence/metrics/*.json. Fixture is synthetic, one seed.
 - [x] neatlogs used: trace links (section 5, Before/After/Recovery); workflow names recallops-baseline and recallops-agent, 44 spans per agent trace (workflow, agent, tool and LLM spans)
-- [ ] Entire used: `entire checkpoint list` output / one `explain`
-- [ ] cfo.ai used: business plan covering pricing, costs, revenue, runway (Page link + screenshots)
+- [x] Entire used: `entire checkpoint list`, one `explain` and the `tokens` view are saved in evidence/entire/ (the explain file omits the transcript section). The 5th commit (trace links) and later commits are not yet permanent checkpoints in the list; the entire-graph plugin is not set up.
+- [x] cfo.ai used: business plan covering pricing, costs, revenue, runway. Economics page https://app.cfo.ai/quick-katydid-282d8b64/pages/420adc7b-5fd2-4e0f-a0f9-2e099aeb4929 ; demo script page https://app.cfo.ai/quick-katydid-282d8b64/pages/2992f952-525d-4b37-96a6-01b390a0eff1 ; inputs page https://app.cfo.ai/quick-katydid-282d8b64/chat/8b28b2aa-ac9f-482f-aad1-5fe6308fc554?panel=page&pageId=11660b66-8470-4aee-809e-f409e8375fc1. Screenshots and a summary are in evidence/cfo-ai/. The workspace is private and sharing is not enabled. All financial inputs except measured token usage are unvalidated hypotheses, and the plan says so.
 - [x] Recovery run: 3 holds timed out after the write succeeded; the agent read each row back, found it HELD and did not repeat the write (0 duplicate hold events). Trace d59857e3b5a80adeebbddb83748f18d0: https://app.neatlogs.com/traces/d59857e3b5a80adeebbddb83748f18d0?orgId=ce7719a1-83b3-44f9-bbb2-e503972e205f&projectId=81cd14fe-6d50-4a94-a711-53b905a7d30f
 - [ ] Built in public: links to posts tagged #neatHack
 - [ ] Code written during the hackathon: public repo, commits dated Oct 10 to Oct 12
-- [ ] No secrets in the repo or in Entire transcripts (checked on: )
+- [x] No secrets in the repo or in Entire transcripts (checked on: 2026-10-12): the two key values in .env (LITELLM_API_KEY, NEATLOGS_API_KEY) are absent from all 20 commits, the 5 Entire checkpoint refs, the working tree and both session transcripts. Not covered: the ElevenLabs key (it is not in this project and was never read by me), anything added after the check, and personal data (the transcripts and checkpoints contain the builder's email address and local file paths). Re-run the check right before the repo is made public.
 
 ## 6. Plan vs completed (keep both lists honest)
 ### Planned (not done yet)
@@ -61,7 +61,7 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 - [x] Expansion event (done 2026-10-11): the real AUG-2026 alert as a second round reopens 31-32 earlier decisions
 - [x] Failure injection (done 2026-10-11): 3 holds time out after the write; the agent reads the service back and does not repeat them
 - [ ] Evaluation: correct / wrong / missed / unresolved per run, several runs each. Done so far: one baseline run (deterministic code), three agent runs on one fixture seed. Not done: other seeds, repeated model runs.
-- [ ] cfo.ai plan from the measured numbers
+- [x] cfo.ai plan from the measured numbers (done 2026-10-12; token usage measured, prices and customers hypothetical)
 - [ ] Demo video + README + submission post
 
 ### Completed (move items here only when they work, with the date)
@@ -136,13 +136,54 @@ Entry format:
 - **Evidence added:** trace links in section 5. They point to a private neatlogs project and need a login, so a judge cannot open them yet.
 - **Next:** make the traces viewable by judges (share link or screenshots) and check for a cost column; cfo.ai plan; README and demo script; other fixture seeds and repeated runs.
 
+### 2026-10-12 05:00 (IST) | cfo.ai plan built from the measured numbers
+- **What changed:** evidence/cfo-ai/ (README with inputs and results, three screenshots). hackathon.md tables and checklist. No code changed.
+- **Decisions and why:** the builder signed up for cfo.ai (free workspace "Quick Katydid"); I only used the signed-in browser session, entered no credentials, and did not turn on sharing. I asked Ari for a 12-month unit-economics and runway model, passing the measured usage per agent run (5,326 prompt + 3,413 completion tokens, 31 calls, about 60 s, about 11 rows to human review) separately from my own placeholder assumptions (model price USD 1 per million tokens, subscription USD 150 per month, 4 runs per distributor-month with a 1-run second scenario, review 3 minutes per row at USD 8 per hour, hosting USD 60 per month, starting cash USD 10,000, 1 to 20 paying distributors over 12 months). Ari asked three clarifying questions (monthly distributor counts and start month, runs per month for the main case, and cost scope); I answered them with further assumptions, written into the prompt as hypotheses. Ari tags every input MEASURED or HYPOTHESIS and states that founder pay, sales, legal/compliance and taxes are EXCLUDED, not zero.
+- **Experiments / failures / fixes:** typing the first long prompt froze the browser tab for about a minute but the full text went in. Ari's first reply said "run" meant a two-alert run, which is how the measurements were taken; I kept that wording in the plan.
+- **Tests actually run:** none (no code). I checked Ari's arithmetic by hand: 99 distributor-months x USD 150 = USD 14,850 revenue; 99 x USD 17.63 + 12 x USD 60 = USD 2,466 costs; closing cash USD 22,384; the one-run case USD 1,156 costs and USD 23,694 closing cash. They match.
+- **Result (hypothesis only):** direct cost per run about USD 4.41, of which model tokens are USD 0.0087 and human review USD 4.40 (99.8%); gross margin 88.2% at 4 runs and 97.1% at 1 run before hosting; cash stays positive in both cases, so runway is N/A. Changing model price from 0.5x to 10x barely moves margin; the review-time assumption and price are what matter. This says nothing about whether any distributor would pay: there is no customer evidence.
+- **Evidence added:** evidence/cfo-ai/README.md and screenshots; plan page links in section 5 (private).
+- **Next:** make the demo cover all three tools; Entire checkpoint evidence (`entire checkpoint list` and one explain); make trace and cfo.ai pages viewable by judges; record the video; make the repo public after a secrets check.
+
+### 2026-10-12 06:00 (IST) | Entire evidence and a narrated demo video
+- **What changed:** evidence/entire/ (checkpoint list, explain header and file list, token view), demo/build_video.py, demo/narration.json, demo/assets/, .gitignore (demo/build/). hackathon.md tables and demo section.
+- **Decisions and why:** the video is built, not recorded: seven slides drawn from evidence/metrics, a real neatlogs trace screenshot, the real `entire checkpoint list` output and the cfo.ai screenshot, read by Microsoft's built-in Zira voice. It is 153 s, 1280x720. It states on screen and aloud that the data is synthetic, the financials are hypotheses and the result is one fixture written by the same builder. It covers neatlogs, Entire and cfo.ai (architecture, implementation, runtime, reasoning, result for each, though Entire and cfo.ai slides name only the parts that apply). The mp4 is not committed; the builder uploads it.
+- **Experiments / failures / fixes:** first render had text overflowing the architecture boxes, a label overlapping the results columns and the command line overlapping the Entire output; fixed and re-rendered. The first draft said "every commit is a checkpoint" but the trace-links commit is not in the list, so it now says each build step. Checked the mp4 with ffprobe (h264 + aac, 152.9 s) and an audio level scan (mean -20.5 dB).
+- **Tests actually run:** none for code. Entire checks: `entire checkpoint list` (5 entries: 4 permanent, 1 temporary), `entire checkpoint explain` and `entire checkpoint tokens` for the agent-loop checkpoint (46.4M tokens counted, 98.6% cache/context replay, 146 API calls). Secret scan: the real key values from .env are absent from both session transcripts and from the repo; the only secret-shaped strings were 'lisk-builders...' URLs from earlier research.
+- **Evidence added:** evidence/entire/*.txt. The Entire checkpoints, including full session transcripts, were pushed to GitHub with the code; the transcripts contain the builder's email address and local paths, so review them before the repo is made public.
+- **Next:** upload the video and check the link logged out; make the neatlogs and cfo.ai pages viewable; README; web check-in and team name; posts; make the repo public after a final check; submission post.
+
+### 2026-10-12 07:45 (IST) | demo video redone with the builder's ElevenLabs method and a local case console
+- **What changed:** demo/site/ (a small local case console: decisions with reasons, review queue, reopened decisions, traced customers and draft notices, the timeout-recovery run, and evidence panels for neatlogs, Entire and cfo.ai), demo/make_site_data.py, demo/kit/ (narration, recorder, mixer, local server, run-tts.ps1, env.example.sh), demo/recallops-india-demo.mp4 (not committed). hackathon.md demo section.
+- **Decisions and why:** the earlier cut used a built-in Windows voice because I did not know the builder already had a saved demo method; I had not looked, and per-project memory did not carry it over. The builder asked for the same voice and settings as the Colosseum demo. I found them in the builder's saved note and kit (demo-video-method, demo-video-kit): one uncut ElevenLabs request, model eleven_v4, voice c6SfcYrb2t09NHXiT80T, stability 0.18, similarity 0.75, style 0.65, speaker boost off; browser recorded against the audio clock; loudness normalised to -16 LUFS; no captions. The project has no live site (it is a command-line agent over local fixtures), so the screen recording is of a local console that only shows real artifacts: the decisions are recomputed with the same matcher using the model's recorded alias judgements and checked against the counts the live runs reported (61 hold / 12 review / 266 not listed in round 1; 92 / 12 / 235 in round 2). It is a view of recorded results, not a live run of the agent.
+- **Experiments / failures / fixes:** the first dry recording showed all three evidence panels visible at once (a CSS rule overrode the hidden attribute), fixed. The model's draft notices contain stray markdown asterisks and a "[Distributor Name]" placeholder: the asterisks are stripped for display only and the narration now says a person finishes and sends each draft. The ElevenLabs key file already on the machine (from the Congress Desk project) worked; the builder should rotate or delete it as the kit notes.
+- **Tests actually run:** no code tests. Video checks: a dry run with silent audio to fix the choreography (no LATE steps), then the real take: silencedetect pauses 0.35 to 0.70 s, ebur128 integrated -16.6 LUFS and peak -1.3 dBFS, h264 + aac 104.3 s, and a 13-frame contact sheet checked against the script. I cannot hear audio, so it was not listened to.
+- **Evidence added:** none beyond the video file; it is not committed because the builder uploads it.
+- **Next:** the builder listens once and approves or asks for a change of tone; upload the video and check the link logged out; README; make the neatlogs and cfo.ai pages viewable; check-in, team name, posts; make the repo public after a final check.
+
+### 2026-10-12 09:15 (IST) | README, pre-public checks and post drafts
+- **What changed:** README.md, submission-drafts.md (drafts only, not posted), demo/kit/env.example.sh and run-tts.ps1 (local paths and the other project's key-file path replaced with placeholders), hackathon.md checklist.
+- **Decisions and why:** done while the builder edits the video. I prepared everything that does not publish anything. I did not make the repo public, enable sharing on the neatlogs or cfo.ai pages, post, or answer the Luma check-in; those are outward-facing and the builder had said to ask first. No licence added: that is the author's choice.
+- **Experiments / failures / fixes:** `git grep` of the working tree found local paths only in git-ignored files (demo/kit/env.sh, __pycache__) after the placeholder edit. The README states the results with the same caveats as this log (one synthetic fixture, same author, one rule added after a live run).
+- **Tests actually run:** `python -m pytest -q` -> 40 passed. Secret scan of all commits, the 5 Entire checkpoint refs, the working tree and both session transcripts for the two .env key values: no hits.
+- **Evidence added:** README.md.
+- **Next:** builder: listen to and edit the video, upload it to X, link check logged out, team name and Luma check-in, decide on the licence, sharing of the neatlogs and cfo.ai pages, and when to make the repo public; then quote-post during the 7:00 to 11:55 PM IST window.
+
+### 2026-10-12 10:00 (IST) | video tooling and post drafts kept out of the public repo
+- **What changed:** .gitignore now ignores demo/ and submission-drafts.md; README layout table and sections 8 and 10 of this file no longer point at them. The files stay on the builder's machine.
+- **Decisions and why:** the builder asked that the video script, the recording tooling and anything not needed by other people stay out of the public repo. The commit that had added them (a0d21af) was local only, so I undid it with a soft reset before anything was pushed and recommitted without them; no history containing them was published. Earlier log entries above still name demo/ files (the log is not edited retroactively): they exist locally only.
+- **Experiments / failures / fixes:** none.
+- **Tests actually run:** none (no code change).
+- **Evidence added:** none.
+- **Next:** push; builder to listen to and edit the video and upload it to X.
+
 ## 8. Demo details
 - **Length:** 3 min max. Must cover neatlogs, Entire and cfo.ai: architecture, implementation, runtime, reasoning, result for each.
-- **Script:** (to be written once the loop works)
-- **How to reproduce the demo:**
-  1.
-  2.
-- **Recorded:** [ ]  **Uploaded:** [ ]  **Link checked from a logged-out browser:** [ ]
+- **Script:** one flowing narration of 13 scenes (problem, holds, why, review queue, second alert, customers, unresolved invoice lines, drafts, timeout recovery, neatlogs, Entire, cfo.ai, limits). Numbers spoken come from the real run artifacts. The narration and the recording tooling (a local case console, scripts, assets) are kept on the builder's machine under demo/ and are git-ignored on purpose: they are not part of the public repo.
+- **How to reproduce the results shown in the demo:**
+  1. `.venv\Scripts\python.exe -m recallops.run baseline` and `... agent` (needs network and keys in .env for traces and model calls; `--no-llm` and `RECALLOPS_TRACE=0` run offline). Metrics for the runs shown are in evidence/metrics/.
+  2. The video itself is a screen recording of a local console over those recorded results with an ElevenLabs voice-over; its tooling is not published.
+- **Recorded:** [x] 2026-10-12, 104 s, 1280x720: a screen recording of a local case console (not a deployed site; there is no live site) against one uncut ElevenLabs take (Voice C), no captions. Audio verified by measurement (pauses 0.35 to 0.7 s, -16.6 LUFS, peak -1.3 dBFS), not yet by a person listening.  **Uploaded:** [ ]  **Link checked from a logged-out browser:** [ ]
 
 ## 9. Known limitations and next steps
 - Stock, invoices and failures are synthetic fixtures built from real alert batches. Results show the mechanics, not proven customer value.
@@ -158,9 +199,9 @@ Entry format:
 ## 10. Submission status
 - Window: Oct 12, 7:00-11:55 PM IST (planned close; final cutoff is announced on Discord)
 - [ ] Repo public, commits verified
-- [ ] Evidence folder in repo
+- [x] Evidence folder in repo (evidence/: metrics, reports, entire, cfo-ai)
 - [ ] Video link works
-- [ ] Quote post drafted with: team, name, project, public repo, demo link, official neatlogs post kept attached
+- [ ] Quote post drafted with: team, name, project, public repo, demo link, official neatlogs post kept attached (drafts with placeholders are kept locally in submission-drafts.md, which is git-ignored; the team name, demo link and the neatlogs post link are missing; nothing is posted)
 - [ ] Posted (time):
 - Post URL:
 - Note: opening the draft alone does not submit. Do not submit without the builder's explicit go-ahead.

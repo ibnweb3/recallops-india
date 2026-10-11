@@ -1,0 +1,28 @@
+$ entire checkpoint explain 01M4NR52N1MGT0D7FZ4R485G7R   (header and file list only; transcript section omitted)
+● Checkpoint 01M4NR52N1MGT0D7FZ4R485G7R
+  session  79c28916-176d-4ade-80a6-9d6de977ac83
+  created  2026-10-11 15:09:03
+  author   ibnweb3 <ibnweb3@gmail.com>
+  tokens   46396.1k
+  commits  4014caf Add the RecallOps agent loop, evidence-based matcher and neatlogs tracing
+────────────────────────────────────────────────────────────
+## Intent
+
+<pasted_content id="b00a">
+We're building RecallOps India for neatHack 2026 (...
+
+## Summary
+
+*Not generated yet. Run ‘entire checkpoint explain --generate 01M4NR52N1MGT0D7FZ4R485G7R‘ to create an AI summary.*
+
+## Files (8)
+
+- `recallops/agent.py`
+- `recallops/llm.py`
+- `recallops/matcher.py`
+- `recallops/run.py`
+- `recallops/tracing.py`
+- `requirements.txt`
+- `scripts/llm_probe.py`
+- `tests/test_agent.py`
+

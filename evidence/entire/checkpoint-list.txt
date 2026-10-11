@@ -1,0 +1,18 @@
+  branch       main
+  checkpoints  5
+
+● 79c28916-176  [temporary]  "push it"
+  10-12 00:14 (0f8938a) Go ahead and build the cfo.ai plan
+
+● 01M4NR58V3YSZ6VEH4FPY864FN  "<pasted_content id=\"b00a\">\nWe're building RecallOps India..."
+  10-11 16:09 (9934b8b) Record live baseline and agent runs in hackathon.md, add sanitized evidence
+
+● 01M4NR52N1MGT0D7FZ4R485G7R  "<pasted_content id=\"b00a\">\nWe're building RecallOps India..."
+  10-11 16:08 (4014caf) Add the RecallOps agent loop, evidence-based matcher and neatlogs tracing
+
+● 01M4NR4JCH0JD25DXQVA6692AM  "<pasted_content id=\"b00a\">\nWe're building RecallOps India..."
+  10-11 16:08 (1a42cf3) Add synthetic fixtures, SQLite stock service, scorer and name-only baseline
+
+● 01M4NQWNWWMNEJXVJ9YS54PTXH  "<pasted_content id=\"b00a\">\nWe're building RecallOps India..."
+  10-11 16:04 (93a726b) Parse real JUL and AUG 2026 NSQ alerts from the CDSCO online portal
+

@@ -1,0 +1,19 @@
+$ entire checkpoint tokens 01M4NR52N1MGT0D7FZ4R485G7R
+Checkpoint tokens
+
+Checkpoint: 01M4NR52N1MGT0D7FZ4R485G7R
+Session:    79c28916-176d-4ade-80a6-9d6de977ac83
+Agent:      Claude Code
+Model:      claude-sonnet-5-5
+Branch:     main
+
+Token usage
+Total:  46396.1k tokens
+  Input: 292 | Cache read: 45739.3k | Cache write: 421.5k | Output: 234.9k | API calls: 146
+
+Recommendations
+- Cache/context replay is 98.6% of token volume; reduce unnecessary follow-up calls in this large-context session.
+- Large context was replayed across 146 API calls; batch the next diagnosis and reduce iterative tool calls.
+- Cache write is elevated; avoid broad new context and narrow the next read before continuing.
+- Output tokens are elevated; keep the next answer tight and avoid restating evidence.
+- Compact or restart after summarizing this investigation; do not discard useful findings just because cache read is high.

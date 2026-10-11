@@ -15,3 +15,8 @@ hackathon.template.md
 # local run output; the sanitized evidence/ folder is committed instead
 runs/
 *.log
+
+# video/demo tooling and post drafts: kept locally, not part of the public repo
+demo/
+submission-drafts.md
+evidence/cfo-ai/demo-script-page.jpg
