@@ -37,6 +37,9 @@ class AlertEntry:
     lab: str
     raw: dict = field(default_factory=dict)
     issues: list[str] = field(default_factory=list)
+    # Only the online portal carries these; the monthly PDFs do not.
+    reporting_source: str = ""
+    report_month: str | None = None  # "YYYY-MM" the alert was published for
 
 
 def clean(text: str | None) -> str:

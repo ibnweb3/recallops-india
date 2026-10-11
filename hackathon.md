@@ -20,7 +20,7 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 |---|---|---|
 | Language / runtime | Python 3.13 (neatlogs needs < 3.14) | in use |
 | LLM provider / model | thin client behind env vars (LLM_BASE_URL, LLM_API_KEY, LLM_MODEL); hackathon LiteLLM key ($20 budget) or own key | planned |
-| Alert parsing | pdfplumber on the CDSCO monthly NSQ PDFs | planned |
+| Alert parsing | pdfplumber on the CDSCO monthly NSQ PDFs (March 2025); JSON rows copied from the CDSCO online portal for newer months (JUL and AUG 2026) | in use |
 | Inventory environment | CSV fixtures + local SQLite stock service with real state transitions | planned |
 | neatlogs SDK + project | workflowName: recallops-baseline / recallops-agent | planned |
 | neatlogs MCP / REST (reading cost and KPIs) | | planned |
@@ -52,7 +52,7 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 
 ## 6. Plan vs completed (keep both lists honest)
 ### Planned (not done yet)
-- [ ] Confirm the alert format across more months. Only March 2025 is parsed so far. CDSCO now publishes newer alerts through an online portal (cdscoonline.gov.in) with year/month/source filters instead of PDFs; its table has not been read yet
+- [x] Confirm the alert format across more months (done 2026-10-11, see build log): newer alerts are portal-only; JUL-2026 (239 rows) and AUG-2026 (220 rows) read and parsed. Older months (2019 to 2025) not read.
 - [ ] Fixture generator: stock, invoices and downstream sales built from real batches in the real alerts (labelled synthetic)
 - [ ] Naive baseline: name-only matching ("before")
 - [ ] Agent loop: rules, matching, investigation of ambiguous rows, holds, read-back
@@ -66,6 +66,7 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 
 ### Completed (move items here only when they work, with the date)
 - 2026-10-10: CDSCO NSQ alert parser (recallops/alerts.py) parses the real March 2025 alert into 70 entries (S.No 1-70), joining entries split across page breaks and handling one DD/MM/YYYY date; 6 tests pass.
+- 2026-10-11: CDSCO online portal parser (recallops/portal.py) parses the real JUL-2026 (239 rows) and AUG-2026 (220 rows) NSQ alerts; the PDF parser is unchanged; 15 tests pass in total (6 PDF, 9 portal).
 - 2026-10-10: Entire CLI 0.11.4 installed; Python 3.13 environment with neatlogs 1.4.26; neatlogs local doctor and end-to-end probe passed.
 
 ## 7. Build log (newest at the bottom; one entry per session; never delete)
@@ -95,6 +96,15 @@ Entry format:
 - **Evidence added:** none yet.
 - **Next:** read a newer month from the CDSCO portal; fixture generator; naive baseline.
 
+### 2026-10-11 14:15 (IST) | newer CDSCO alerts from the online portal
+- **What changed:** recallops/portal.py (portal rows to the same AlertEntry shape), tests/test_portal.py, data/alerts/raw/portal-JUL-2026.jsonl (239 rows) and portal-AUG-2026.jsonl (220 rows), data/alerts/parsed/portal-*.json. AlertEntry gained two optional fields, reporting_source and report_month; recallops/alerts.py is otherwise unchanged.
+- **Decisions and why:** newer alerts are not PDFs. cdscoonline.gov.in/CDSCO/viewPublicNSQDrug renders a DataTable from JSON (one table per reporting month, year/month/source filters) with month names like "Jun-2026". Rather than change the PDF parser, a second small parser maps portal rows onto the same entry shape. JUL-2026 is intended as the first alert and AUG-2026 as the expansion alert; they overlap on some batches, which is real data, not something I added. Rows are stored verbatim (typos, line breaks and "?" placeholders included); cleaning happens in the parser and the original text stays in `raw`.
+- **Experiments / failures / fixes:** the sandboxed shell could not resolve cdscoonline.gov.in, so the rows were read in the built-in browser. A browser-to-localhost POST was blocked by the browser pane, so the rows were copied through chat in chunks and written to disk by hand. To catch transcription errors, each file was checked against a 32-bit FNV-1a hash and per-row lengths computed on the page: one dropped character ("Dist Dhar" for "Dist. Dhar") was found that way and fixed; after that JUL (71131 characters, 239 rows) and AUG (67221 characters, 220 rows) match the page exactly. The portal's fields are clean enough to parse, but the data is messy: 2 July rows have batch "Not Mentioned" and no dates, 1 July batch number is split over two lines ("T-2611
+36"), 1 August row has expiry before manufacture, 2 August batches carry a trailing comma, and one batch is reported twice with different spacing (BKBP02601 and "BKBP O2601"). The parser flags these in `issues` instead of dropping them.
+- **Tests actually run:** `python -m pytest -q` -> 15 passed (6 existing PDF tests, 9 new portal tests). `python -m recallops.portal` on each file: JUL 239 entries, 3 with issues; AUG 220 entries, 3 with issues.
+- **Evidence added:** none yet (no traces).
+- **Next:** fixture generator (stock, invoices, downstream sales from these real batches, labelled synthetic); naive name-only baseline; agent loop under neatlogs.
+
 ## 8. Demo details
 - **Length:** 3 min max. Must cover neatlogs, Entire and cfo.ai: architecture, implementation, runtime, reasoning, result for each.
 - **Script:** (to be written once the loop works)
@@ -108,7 +118,7 @@ Entry format:
 - A CDSCO NSQ result is specific to the tested batch. "Not on the list" is a scoped finding, never a safety clearance. A digital hold does not prove physical removal.
 - Recall deadlines and retailer duties per recall class were not confirmed from CDSCO's own text, so they are not hard-coded.
 - No customer interviews and no willingness-to-pay evidence; the business plan is a hypothesis.
-- Alert PDFs may change layout between months; only one month has been checked so far.
+- Alert PDFs may change layout between months; only one PDF month has been checked. Newer months are portal-only and were copied by hand from the portal's own table data (JUL-2026 and AUG-2026 only); I did not build or test a live fetch from the portal.
 
 ## 10. Submission status
 - Window: Oct 12, 7:00-11:55 PM IST (planned close; final cutoff is announced on Discord)
