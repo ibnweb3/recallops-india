@@ -1,0 +1,102 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4PNZX3AYBQS10SKFX9GFKZZ",
+  "session_id": "79c28916-176d-4ade-80a6-9d6de977ac83",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T23:50:55.3050291Z",
+  "branch": "main",
+  "checkpoints_count": 11,
+  "save_step_count": 4,
+  "files_touched": [
+    ".gitignore",
+    "README.md",
+    "demo/assets/cfoai-cash.jpg",
+    "demo/assets/entire-checkpoint-list.txt",
+    "demo/assets/neatlogs-trace.jpg",
+    "demo/build_video.py",
+    "demo/kit/env.example.sh",
+    "demo/kit/mix.mjs",
+    "demo/kit/record-driven.mjs",
+    "demo/kit/run-tts.ps1",
+    "demo/kit/serve.mjs",
+    "demo/kit/tts-single-take.mjs",
+    "demo/make_site_data.py",
+    "demo/narration.json",
+    "demo/site/assets/cfoai-cash.jpg",
+    "demo/site/assets/cfoai-demo.jpg",
+    "demo/site/assets/neatlogs.jpg",
+    "demo/site/data.json",
+    "demo/site/index.html",
+    "evidence/cfo-ai/README.md",
+    "evidence/cfo-ai/demo-script-page.jpg",
+    "evidence/cfo-ai/economics-cash-forecast.jpg",
+    "evidence/cfo-ai/economics-page-top.jpg",
+    "evidence/entire/checkpoint-list.txt",
+    "evidence/entire/explain-agent-loop-checkpoint.txt",
+    "evidence/entire/tokens-agent-loop-checkpoint.txt",
+    "hackathon.md",
+    "submission-drafts.md"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "15da4f4b9d7c",
+  "checkpoint_transcript_start": 1170,
+  "transcript_lines_at_start": 1170,
+  "compact_transcript_start": 160,
+  "token_usage": {
+    "input_tokens": 268,
+    "cache_creation_tokens": 698206,
+    "cache_read_tokens": 76299116,
+    "output_tokens": 123348,
+    "api_call_count": 134
+  },
+  "session_metrics": {
+    "turn_count": 12
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-11T23:50:54.9046642Z",
+    "agent_lines": 1026,
+    "agent_removed": 13,
+    "human_added": 0,
+    "human_modified": 199,
+    "human_removed": 0,
+    "total_committed": 1225,
+    "total_lines_changed": 1238,
+    "agent_percentage": 83.92568659127625,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 283,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "agent-opportunity-research.md": 233,
+        "recallops-india-scope.md": 50
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 500,
+      "agent_lines_removed": 166
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 840,
+      "agent_lines_removed": 166
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 1371,
+      "agent_lines_removed": 166
+    }
+  ]
+}

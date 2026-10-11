@@ -1,0 +1,53 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4PNZX3AYBQS10SKFX9GFKZZ",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 11,
+  "files_touched": [
+    ".gitignore",
+    "README.md",
+    "demo/assets/cfoai-cash.jpg",
+    "demo/assets/entire-checkpoint-list.txt",
+    "demo/assets/neatlogs-trace.jpg",
+    "demo/build_video.py",
+    "demo/kit/env.example.sh",
+    "demo/kit/mix.mjs",
+    "demo/kit/record-driven.mjs",
+    "demo/kit/run-tts.ps1",
+    "demo/kit/serve.mjs",
+    "demo/kit/tts-single-take.mjs",
+    "demo/make_site_data.py",
+    "demo/narration.json",
+    "demo/site/assets/cfoai-cash.jpg",
+    "demo/site/assets/cfoai-demo.jpg",
+    "demo/site/assets/neatlogs.jpg",
+    "demo/site/data.json",
+    "demo/site/index.html",
+    "evidence/cfo-ai/README.md",
+    "evidence/cfo-ai/demo-script-page.jpg",
+    "evidence/cfo-ai/economics-cash-forecast.jpg",
+    "evidence/cfo-ai/economics-page-top.jpg",
+    "evidence/entire/checkpoint-list.txt",
+    "evidence/entire/explain-agent-loop-checkpoint.txt",
+    "evidence/entire/tokens-agent-loop-checkpoint.txt",
+    "hackathon.md",
+    "submission-drafts.md"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 268,
+    "cache_creation_tokens": 698206,
+    "cache_read_tokens": 76299116,
+    "output_tokens": 123348,
+    "api_call_count": 134
+  }
+}
