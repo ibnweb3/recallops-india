@@ -32,20 +32,20 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 ## 4. How each required tool is used (this feeds the 25% score and the video)
 | Tool | Role in building / running / planning | Evidence link or file | Done |
 |---|---|---|---|
-| neatlogs | traces for the baseline and the agent under separate workflow names; before/after cost, tokens, errors; cost alerts | exported from 4 runs (SDK counters: 0 export failures); trace links NOT yet recorded; run metrics in evidence/metrics/ | [ ] |
+| neatlogs | traces for the baseline and the agent under separate workflow names; before/after cost, tokens, errors; cost alerts | exported from 4 runs (SDK counters: 0 export failures); trace links recorded in section 5 (private project, login needed); run metrics in evidence/metrics/ | [x] |
 | Entire (checkpoints) | every build session checkpointed; no secrets in transcripts | | [ ] |
 | Entire (entire-graph) | | | [ ] |
 | cfo.ai | unit economics: price per resolved alert vs model cost per alert | | [ ] |
 
 ## 5. Evidence checklist (judges verify these)
-- [ ] Agent improved: before trace link + after trace link + the numbers compared
-  - Before (workflowName / trace ids):
-  - After (workflowName / trace ids):
-  - Metrics (correct holds, wrong holds, missed holds, unresolved, tokens, cost USD, duration):
-- [ ] neatlogs used: trace links or screenshots
+- [x] Agent improved: before trace link + after trace link + the numbers compared (links are to a private neatlogs project and need a login; making them viewable by judges is not set up)
+  - Before (workflowName / trace ids): recallops-baseline, trace 37fd62f8ca903b8bed6a654354af6234: https://app.neatlogs.com/traces/37fd62f8ca903b8bed6a654354af6234?orgId=ce7719a1-83b3-44f9-bbb2-e503972e205f&projectId=81cd14fe-6d50-4a94-a711-53b905a7d30f
+  - After (workflowName / trace ids): recallops-agent. First run (before the added rule), trace a204710bdbc71cce221e7788af251e11: https://app.neatlogs.com/traces/a204710bdbc71cce221e7788af251e11?orgId=ce7719a1-83b3-44f9-bbb2-e503972e205f&projectId=81cd14fe-6d50-4a94-a711-53b905a7d30f ; after the added rule, trace 24a0438ea5b27de21487c1095a959374: https://app.neatlogs.com/traces/24a0438ea5b27de21487c1095a959374?orgId=ce7719a1-83b3-44f9-bbb2-e503972e205f&projectId=81cd14fe-6d50-4a94-a711-53b905a7d30f
+  - Metrics (correct holds, wrong holds, missed holds, unresolved, tokens, cost USD, duration): round 1 (JUL alert) baseline 56/61 correct, 5 missed, 87 wrong holds; agent 61/61, 0 missed, 0 wrong. Round 2 (JUL+AUG) baseline 80/93, 13 missed, 110 wrong; agent 92/93, 0 missed, 0 wrong, 1 extra row sent to review. Agent run: 31 model calls, 5326 prompt + 3413 completion tokens (the same totals appear in the neatlogs trace), 60.7 s; baseline 4.4 s, no model calls. Cost USD: not read from neatlogs (the trace view I opened showed tokens and time only) and not computed. 13 invoice lines in round 1 and 17 in round 2 have no batch number and are listed as unresolved exposure. Source: evidence/metrics/*.json. Fixture is synthetic, one seed.
+- [x] neatlogs used: trace links (section 5, Before/After/Recovery); workflow names recallops-baseline and recallops-agent, 44 spans per agent trace (workflow, agent, tool and LLM spans)
 - [ ] Entire used: `entire checkpoint list` output / one `explain`
 - [ ] cfo.ai used: business plan covering pricing, costs, revenue, runway (Page link + screenshots)
-- [ ] Recovery run: an action failed and the agent did X next (trace link)
+- [x] Recovery run: 3 holds timed out after the write succeeded; the agent read each row back, found it HELD and did not repeat the write (0 duplicate hold events). Trace d59857e3b5a80adeebbddb83748f18d0: https://app.neatlogs.com/traces/d59857e3b5a80adeebbddb83748f18d0?orgId=ce7719a1-83b3-44f9-bbb2-e503972e205f&projectId=81cd14fe-6d50-4a94-a711-53b905a7d30f
 - [ ] Built in public: links to posts tagged #neatHack
 - [ ] Code written during the hackathon: public repo, commits dated Oct 10 to Oct 12
 - [ ] No secrets in the repo or in Entire transcripts (checked on: )
@@ -127,6 +127,14 @@ Entry format:
   - neatlogs SDK delivery counters after each traced run: 0 span drops, 0 export failures. I did not check the neatlogs dashboard or API, so I have not confirmed the traces show up there or how cost is computed.
 - **Evidence added:** evidence/metrics/*.json and evidence/reports/ (round reports of the recovery run). Trace links: none recorded yet.
 - **Next:** copy the trace links for the four traced runs from neatlogs into the evidence checklist; answer the Entire prompt so these changes can be committed and checkpointed; cfo.ai plan from measured token counts; README and demo script; other fixture seeds and repeated runs.
+
+### 2026-10-11 20:55 (IST) | neatlogs trace links recorded
+- **What changed:** hackathon.md only (section 3 and 4 tables, section 5 evidence checklist).
+- **Decisions and why:** the four live runs map to traces by workflow name and by the duration neatlogs shows, which matches my own run metrics: recallops-baseline 4.4 s (trace 37fd62f8ca903b8bed6a654354af6234); recallops-agent first run 55.5 s (a204710bdbc71cce221e7788af251e11); after the added rule 60.7 s (24a0438ea5b27de21487c1095a959374); recovery run 58.5 s (d59857e3b5a80adeebbddb83748f18d0). The dashboard's list view does not show the run:<name> tag, so duration is what ties each trace to a run. The dashboard also lists one older trace from 10 October (neatlogs.doctor.v2, the setup check), which is not part of these results.
+- **Experiments / failures / fixes:** I signed nothing in myself; the builder signed in to neatlogs in the built-in browser and I only read the traces list and trace pages. Token totals on the v2 trace (5326 prompt, 3413 completion) match my own counters. I did not find a dollar cost in the trace view, so no cost figure is recorded.
+- **Tests actually run:** none (documentation change).
+- **Evidence added:** trace links in section 5. They point to a private neatlogs project and need a login, so a judge cannot open them yet.
+- **Next:** make the traces viewable by judges (share link or screenshots) and check for a cost column; cfo.ai plan; README and demo script; other fixture seeds and repeated runs.
 
 ## 8. Demo details
 - **Length:** 3 min max. Must cover neatlogs, Entire and cfo.ai: architecture, implementation, runtime, reasoning, result for each.
