@@ -1,0 +1,33 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4NR52N1MGT0D7FZ4R485G7R",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "recallops/agent.py",
+    "recallops/llm.py",
+    "recallops/matcher.py",
+    "recallops/run.py",
+    "recallops/tracing.py",
+    "requirements.txt",
+    "scripts/llm_probe.py",
+    "tests/test_agent.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 292,
+    "cache_creation_tokens": 421535,
+    "cache_read_tokens": 45739332,
+    "output_tokens": 234929,
+    "api_call_count": 146
+  }
+}
