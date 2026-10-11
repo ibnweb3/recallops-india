@@ -1,0 +1,33 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4NQWNWWMNEJXVJ9YS54PTXH",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "data/alerts/parsed/portal-AUG-2026.json",
+    "data/alerts/parsed/portal-JUL-2026.json",
+    "data/alerts/raw/portal-AUG-2026.jsonl",
+    "data/alerts/raw/portal-JUL-2026.jsonl",
+    "hackathon.md",
+    "recallops/alerts.py",
+    "recallops/portal.py",
+    "tests/test_portal.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 258,
+    "cache_creation_tokens": 404300,
+    "cache_read_tokens": 37981281,
+    "output_tokens": 227950,
+    "api_call_count": 129
+  }
+}

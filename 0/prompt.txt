@@ -1,0 +1,33 @@
+<pasted_content id="b00a">
+We're building RecallOps India for neatHack 2026 (ends Oct 12, submission 7:00-11:55 PM IST). Read hackathon.md first, then the memory note neathack-recallops-status if you have it. Everything is in this folder.
+
+What it is: an agent that reads Indian CDSCO drug-quality (NSQ) alerts, reconciles them against a distributor's synthetic stock and invoice records, places digital holds, traces which customers got held batches, verifies its own actions, and reopens decisions when a second alert adds batches. Pharma only (not food). Fixtures are synthetic and must be labelled so. "Not listed" is never a safety clearance.
+
+Already done and committed: Entire is enabled, the repo is github.com/ibnweb3/recallops-india (private for now), recallops/alerts.py parses the real March 2025 CDSCO PDF (70 entries, tests pass), neatlogs works (NEATLOGS_API_KEY in .env, Python 3.13 in .venv).
+
+Model access: .env has the hackathon LiteLLM key under the name LiteLLM. Please rename it to LITELLM_API_KEY. Base URL https://litellm.vision.aivar.app/v1 (OpenAI-compatible). Models: nova-micro, nova-lite, nova-pro, nova-2-lite, claude-haiku, claude-sonnet-4.6, claude-opus-4.6. The budget is $20 total, so keep calls cheap: code does the matching and arithmetic, the model only handles ambiguous rows, aliases and drafts. Never print or commit keys.
+
+Rules: keep a log in hackathon.md (never delete entries, record only tests that really ran). Commit small and often with clear messages, ending each with the Co-Authored-By line. Don't make the repo public, post anything, or sign up for anything without asking me.
+
+Next steps in order: (1) read a newer CDSCO alert from cdscoonline.gov.in/CDSCO/viewPublicNSQDrug and check the parser still works, (2) fixture generator: stock, invoices and downstream sales built from real batches, with deliberate messy rows, (3) naive name-only baseline, (4) the agent loop traced with neatlogs under separate workflowNames recallops-baseline and recallops-agent.
+</pasted_content id="b00a">
+
+---
+
+<task-notification>
+<task-id>b9dolcvgq</task-id>
+<tool-use-id>toolu_01BfsSYpjdXDxyGws4HLH7R2</tool-use-id>
+<output-file>C:\Users\IBN\AppData\Local\Temp\claude\C--Users-IBN-Documents-Claude-NeatHack\79c28916-176d-4ade-80a6-9d6de977ac83\tasks\b9dolcvgq.output</output-file>
+<status>failed</status>
+<summary>Background command "Start localhost receiver for portal data" failed with exit code 127</summary>
+</task-notification>
+
+---
+
+<task-notification>
+<task-id>bhygw7k31</task-id>
+<tool-use-id>toolu_01Fp8B9uQCLcPQeguQCLx9PE</tool-use-id>
+<output-file>C:\Users\IBN\AppData\Local\Temp\claude\C--Users-IBN-Documents-Claude-NeatHack\79c28916-176d-4ade-80a6-9d6de977ac83\tasks\bhygw7k31.output</output-file>
+<status>completed</status>
+<summary>Background command "Commit the portal parser work" completed (exit code 0)</summary>
+</task-notification>
