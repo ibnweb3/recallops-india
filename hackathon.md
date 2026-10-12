@@ -7,7 +7,7 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 - **One line:** An agent that takes an official Indian drug-quality alert (CDSCO "Not of Standard Quality" batches), reconciles it against a distributor's messy stock and invoice records, places verified digital holds, traces where held batches went, and proves what it did.
 - **Track:** Build an agent that works (the only track)
 - **Problem it solves:** CDSCO publishes a monthly list of drug batches that failed quality tests, and stockists, distributors and retailers are expected to find and withdraw those exact batches. The alert is a PDF table (product, batch, manufacturing and expiry month, manufacturer, failed test); the stock is in someone's billing software. Matching them is slow and error-prone: brand versus generic names, strengths inside names, odd batch formats, month-only dates. A failure is specific to a tested batch, so wrongly holding other batches costs money and missing a listed batch is a safety risk.
-- **Public repo:** https://github.com/ibnweb3/recallops-india (private for now; to be made public on Oct 12 after a secrets check)
+- **Public repo:** https://github.com/ibnweb3/recallops-india (public since 2026-10-12, after a secrets check)
 - **Demo video (3 min max):** <url, filled in on Oct 12>
 
 ## 2. Team
@@ -47,7 +47,7 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 - [x] cfo.ai used: business plan covering pricing, costs, revenue, runway. Economics page https://app.cfo.ai/quick-katydid-282d8b64/pages/420adc7b-5fd2-4e0f-a0f9-2e099aeb4929 ; demo script page https://app.cfo.ai/quick-katydid-282d8b64/pages/2992f952-525d-4b37-96a6-01b390a0eff1 ; inputs page https://app.cfo.ai/quick-katydid-282d8b64/chat/8b28b2aa-ac9f-482f-aad1-5fe6308fc554?panel=page&pageId=11660b66-8470-4aee-809e-f409e8375fc1. Screenshots and a summary are in evidence/cfo-ai/. The workspace is private and sharing is not enabled. All financial inputs except measured token usage are unvalidated hypotheses, and the plan says so.
 - [x] Recovery run: 3 holds timed out after the write succeeded; the agent read each row back, found it HELD and did not repeat the write (0 duplicate hold events). Trace d59857e3b5a80adeebbddb83748f18d0: https://app.neatlogs.com/traces/d59857e3b5a80adeebbddb83748f18d0?orgId=ce7719a1-83b3-44f9-bbb2-e503972e205f&projectId=81cd14fe-6d50-4a94-a711-53b905a7d30f
 - [ ] Built in public: links to posts tagged #neatHack
-- [ ] Code written during the hackathon: public repo, commits dated Oct 10 to Oct 12
+- [x] Code written during the hackathon: public repo, commits dated Oct 10 to Oct 12 (all commits in the history are dated 2026-10-10 to 2026-10-12; the repo was made public on 2026-10-12)
 - [x] No secrets in the repo or in Entire transcripts (checked on: 2026-10-12): the two key values in .env (LITELLM_API_KEY, NEATLOGS_API_KEY) are absent from all 20 commits, the 5 Entire checkpoint refs, the working tree and both session transcripts. Not covered: the ElevenLabs key (it is not in this project and was never read by me), anything added after the check, and personal data (the transcripts and checkpoints contain the builder's email address and local file paths). Re-run the check right before the repo is made public.
 
 ## 6. Plan vs completed (keep both lists honest)
@@ -177,6 +177,14 @@ Entry format:
 - **Evidence added:** none.
 - **Next:** push; builder to listen to and edit the video and upload it to X.
 
+### 2026-10-12 10:45 (IST) | repo made public
+- **What changed:** repository visibility (GitHub), and the status lines in this file.
+- **Decisions and why:** the builder asked for it. Before the switch I re-ran the secret scan over all 19 commits and 8 refs (5 are Entire checkpoint refs): no .env key value, no secret-shaped string. The repo contains no video tooling, narration script or post drafts (git-ignored on purpose).
+- **Experiments / failures / fixes:** none. Checked from a signed-out browser: the repo page shows "Public", the README and the folders. The GitHub description still says "work in progress"; not changed.
+- **Tests actually run:** none (no code change). `gh repo edit --visibility public` succeeded.
+- **Evidence added:** none.
+- **Next:** upload the video to X and check it logged out; team name and Luma check-in; licence choice; share or screenshot the neatlogs and cfo.ai pages; submission quote-post inside the 7:00 to 11:55 PM IST window.
+
 ## 8. Demo details
 - **Length:** 3 min max. Must cover neatlogs, Entire and cfo.ai: architecture, implementation, runtime, reasoning, result for each.
 - **Script:** one flowing narration of 13 scenes (problem, holds, why, review queue, second alert, customers, unresolved invoice lines, drafts, timeout recovery, neatlogs, Entire, cfo.ai, limits). Numbers spoken come from the real run artifacts. The narration and the recording tooling (a local case console, scripts, assets) are kept on the builder's machine under demo/ and are git-ignored on purpose: they are not part of the public repo.
@@ -198,7 +206,7 @@ Entry format:
 
 ## 10. Submission status
 - Window: Oct 12, 7:00-11:55 PM IST (planned close; final cutoff is announced on Discord)
-- [ ] Repo public, commits verified
+- [x] Repo public, commits verified (2026-10-12; viewed signed out in a browser: README, folders and the "Public" badge show. Final secret scan before the switch: no .env key value in 19 commits and 8 refs including 5 Entire checkpoint refs)
 - [x] Evidence folder in repo (evidence/: metrics, reports, entire, cfo-ai)
 - [ ] Video link works
 - [ ] Quote post drafted with: team, name, project, public repo, demo link, official neatlogs post kept attached (drafts with placeholders are kept locally in submission-drafts.md, which is git-ignored; the team name, demo link and the neatlogs post link are missing; nothing is posted)
