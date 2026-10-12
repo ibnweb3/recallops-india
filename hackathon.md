@@ -8,7 +8,7 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 - **Track:** Build an agent that works (the only track)
 - **Problem it solves:** CDSCO publishes a monthly list of drug batches that failed quality tests, and stockists, distributors and retailers are expected to find and withdraw those exact batches. The alert is a PDF table (product, batch, manufacturing and expiry month, manufacturer, failed test); the stock is in someone's billing software. Matching them is slow and error-prone: brand versus generic names, strengths inside names, odd batch formats, month-only dates. A failure is specific to a tested batch, so wrongly holding other batches costs money and missing a listed batch is a safety risk.
 - **Public repo:** https://github.com/ibnweb3/recallops-india (public since 2026-10-12, after a secrets check)
-- **Demo video (3 min max):** <url, filled in on Oct 12>
+- **Demo video (3 min max):** https://youtu.be/8an_y3CCGqg (YouTube, public, 1:44)
 
 ## 2. Team
 - Solo: <name / handle you choose to publish>
@@ -185,13 +185,21 @@ Entry format:
 - **Evidence added:** none.
 - **Next:** upload the video to X and check it logged out; team name and Luma check-in; licence choice; share or screenshot the neatlogs and cfo.ai pages; submission quote-post inside the 7:00 to 11:55 PM IST window.
 
+### 2026-10-12 13:30 (IST) | demo video uploaded to YouTube
+- **What changed:** hackathon.md only (demo link and checklist). The video itself is on YouTube, public.
+- **Decisions and why:** the builder asked for a public YouTube upload of the edited video. The upload tool I had accepts under 10 MB and the edit is 15.7 MB, so the uploaded file is a 1280x720 re-encode of the edit (9.8 MB, same audio, same 104 s). Title and description state that the stock and customers are synthetic, the alert batches are real, the business numbers are hypotheses, and link to the repo. Settings I chose: not made for kids; AI-use question answered Yes because the voice-over is a realistic AI-generated voice; no collaborators, no promotion.
+- **Experiments / failures / fixes:** the first "Upload videos" click opened a native file picker that froze the page; Escape recovered it, and the dashboard's upload icon opened the in-page dialog instead. The title and description fields are rich text, so they were typed rather than set.
+- **Tests actually run:** none (no code). YouTube's copyright check: no issues found. Watch page loaded signed out.
+- **Evidence added:** the public video link.
+- **Next:** X upload and the tweet (builder); team name and Luma check-in; quote-post in the 7:00 to 11:55 PM IST window with this link as the demo link.
+
 ## 8. Demo details
 - **Length:** 3 min max. Must cover neatlogs, Entire and cfo.ai: architecture, implementation, runtime, reasoning, result for each.
 - **Script:** one flowing narration of 13 scenes (problem, holds, why, review queue, second alert, customers, unresolved invoice lines, drafts, timeout recovery, neatlogs, Entire, cfo.ai, limits). Numbers spoken come from the real run artifacts. The narration and the recording tooling (a local case console, scripts, assets) are kept on the builder's machine under demo/ and are git-ignored on purpose: they are not part of the public repo.
 - **How to reproduce the results shown in the demo:**
   1. `.venv\Scripts\python.exe -m recallops.run baseline` and `... agent` (needs network and keys in .env for traces and model calls; `--no-llm` and `RECALLOPS_TRACE=0` run offline). Metrics for the runs shown are in evidence/metrics/.
   2. The video itself is a screen recording of a local console over those recorded results with an ElevenLabs voice-over; its tooling is not published.
-- **Recorded:** [x] 2026-10-12, 104 s, 1280x720: a screen recording of a local case console (not a deployed site; there is no live site) against one uncut ElevenLabs take (Voice C), no captions. Audio verified by measurement (pauses 0.35 to 0.7 s, -16.6 LUFS, peak -1.3 dBFS), not yet by a person listening.  **Uploaded:** [ ]  **Link checked from a logged-out browser:** [ ]
+- **Recorded:** [x] 2026-10-12, 104 s, 1280x720: a screen recording of a local case console (not a deployed site; there is no live site) against one uncut ElevenLabs take (Voice C), no captions. Audio verified by measurement (pauses 0.35 to 0.7 s, -16.6 LUFS, peak -1.3 dBFS), not yet by a person listening. The builder then edited it (animated word captions, 1600x900).  **Uploaded:** [x] YouTube, public, 2026-10-12: https://youtu.be/8an_y3CCGqg (a 1280x720 copy re-encoded to under 10 MB for the upload tool, same audio; the builder's full-quality edit is kept locally).  **Link checked from a logged-out browser:** [x] the watch page loads with the right title and a 1:44 player in a browser that is not signed in to the channel; playback itself was not watched end to end.
 
 ## 9. Known limitations and next steps
 - Stock, invoices and failures are synthetic fixtures built from real alert batches. Results show the mechanics, not proven customer value.
@@ -208,7 +216,7 @@ Entry format:
 - Window: Oct 12, 7:00-11:55 PM IST (planned close; final cutoff is announced on Discord)
 - [x] Repo public, commits verified (2026-10-12; viewed signed out in a browser: README, folders and the "Public" badge show. Final secret scan before the switch: no .env key value in 19 commits and 8 refs including 5 Entire checkpoint refs)
 - [x] Evidence folder in repo (evidence/: metrics, reports, entire, cfo-ai)
-- [ ] Video link works
+- [x] Video link works (YouTube https://youtu.be/8an_y3CCGqg, public; checked loading signed out; an X upload is separate and not done by me)
 - [ ] Quote post drafted with: team, name, project, public repo, demo link, official neatlogs post kept attached (drafts with placeholders are kept locally in submission-drafts.md, which is git-ignored; the team name, demo link and the neatlogs post link are missing; nothing is posted)
 - [ ] Posted (time):
 - Post URL:
