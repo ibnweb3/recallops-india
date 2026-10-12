@@ -32,17 +32,17 @@ Rules for this file (from the neatlogs hackathon skill): never delete old entrie
 ## 4. How each required tool is used (this feeds the 25% score and the video)
 | Tool | Role in building / running / planning | Evidence link or file | Done |
 |---|---|---|---|
-| neatlogs | traces for the baseline and the agent under separate workflow names; before/after cost, tokens, errors; cost alerts | exported from 4 runs (SDK counters: 0 export failures); trace links recorded in section 5 (private project, login needed); run metrics in evidence/metrics/ | [x] |
+| neatlogs | traces for the baseline and the agent under separate workflow names; before/after cost, tokens, errors; cost alerts | exported from 4 runs (SDK counters: 0 export failures); trace ids recorded in section 5 (private project, login needed, no share links made); screenshots of three traces in evidence/neatlogs/; run metrics in evidence/metrics/ | [x] |
 | Entire (checkpoints) | every build session checkpointed; no secrets in transcripts | evidence/entire/ (checkpoint list, explain, token view); 4 permanent checkpoints for 4 build steps; transcripts scanned for our key values on 2026-10-12: none found | [x] |
 | Entire (entire-graph) | | | [ ] |
 | cfo.ai | unit economics: price per resolved alert vs model cost per alert | plan pages (private, login needed): https://app.cfo.ai/quick-katydid-282d8b64/pages/420adc7b-5fd2-4e0f-a0f9-2e099aeb4929 ; evidence/cfo-ai/ (summary and screenshots) | [x] |
 
 ## 5. Evidence checklist (judges verify these)
-- [x] Agent improved: before trace link + after trace link + the numbers compared (links are to a private neatlogs project and need a login; making them viewable by judges is not set up)
+- [x] Agent improved: before trace link + after trace link + the numbers compared (the trace links are to a private neatlogs project and need a login; by the builder's choice no share links were made, and screenshots of the baseline, agent and recovery traces are in evidence/neatlogs/ instead)
   - Before (workflowName / trace ids): recallops-baseline, trace 37fd62f8ca903b8bed6a654354af6234: https://app.neatlogs.com/traces/37fd62f8ca903b8bed6a654354af6234?orgId=ce7719a1-83b3-44f9-bbb2-e503972e205f&projectId=81cd14fe-6d50-4a94-a711-53b905a7d30f
   - After (workflowName / trace ids): recallops-agent. First run (before the added rule), trace a204710bdbc71cce221e7788af251e11: https://app.neatlogs.com/traces/a204710bdbc71cce221e7788af251e11?orgId=ce7719a1-83b3-44f9-bbb2-e503972e205f&projectId=81cd14fe-6d50-4a94-a711-53b905a7d30f ; after the added rule, trace 24a0438ea5b27de21487c1095a959374: https://app.neatlogs.com/traces/24a0438ea5b27de21487c1095a959374?orgId=ce7719a1-83b3-44f9-bbb2-e503972e205f&projectId=81cd14fe-6d50-4a94-a711-53b905a7d30f
   - Metrics (correct holds, wrong holds, missed holds, unresolved, tokens, cost USD, duration): round 1 (JUL alert) baseline 56/61 correct, 5 missed, 87 wrong holds; agent 61/61, 0 missed, 0 wrong. Round 2 (JUL+AUG) baseline 80/93, 13 missed, 110 wrong; agent 92/93, 0 missed, 0 wrong, 1 extra row sent to review. Agent run: 31 model calls, 5326 prompt + 3413 completion tokens (the same totals appear in the neatlogs trace), 60.7 s; baseline 4.4 s, no model calls. Cost USD: not read from neatlogs (the trace view I opened showed tokens and time only) and not computed. 13 invoice lines in round 1 and 17 in round 2 have no batch number and are listed as unresolved exposure. Source: evidence/metrics/*.json. Fixture is synthetic, one seed.
-- [x] neatlogs used: trace links (section 5, Before/After/Recovery); workflow names recallops-baseline and recallops-agent, 44 spans per agent trace (workflow, agent, tool and LLM spans)
+- [x] neatlogs used: trace links (section 5, Before/After/Recovery; login needed) and screenshots (evidence/neatlogs/); workflow names recallops-baseline and recallops-agent, 44 spans per agent trace (workflow, agent, tool and LLM spans)
 - [x] Entire used: `entire checkpoint list`, one `explain` and the `tokens` view are saved in evidence/entire/ (the explain file omits the transcript section). The 5th commit (trace links) and later commits are not yet permanent checkpoints in the list; the entire-graph plugin is not set up.
 - [x] cfo.ai used: business plan covering pricing, costs, revenue, runway. Economics page https://app.cfo.ai/quick-katydid-282d8b64/pages/420adc7b-5fd2-4e0f-a0f9-2e099aeb4929 ; demo script page https://app.cfo.ai/quick-katydid-282d8b64/pages/2992f952-525d-4b37-96a6-01b390a0eff1 ; inputs page https://app.cfo.ai/quick-katydid-282d8b64/chat/8b28b2aa-ac9f-482f-aad1-5fe6308fc554?panel=page&pageId=11660b66-8470-4aee-809e-f409e8375fc1. Screenshots and a summary are in evidence/cfo-ai/. The workspace is private and sharing is not enabled. All financial inputs except measured token usage are unvalidated hypotheses, and the plan says so.
 - [x] Recovery run: 3 holds timed out after the write succeeded; the agent read each row back, found it HELD and did not repeat the write (0 duplicate hold events). Trace d59857e3b5a80adeebbddb83748f18d0: https://app.neatlogs.com/traces/d59857e3b5a80adeebbddb83748f18d0?orgId=ce7719a1-83b3-44f9-bbb2-e503972e205f&projectId=81cd14fe-6d50-4a94-a711-53b905a7d30f
@@ -192,6 +192,14 @@ Entry format:
 - **Tests actually run:** none (no code). YouTube's copyright check: no issues found. Watch page loaded signed out.
 - **Evidence added:** the public video link.
 - **Next:** X upload and the tweet (builder); team name and Luma check-in; quote-post in the 7:00 to 11:55 PM IST window with this link as the demo link.
+
+### 2026-10-12 15:10 (IST) | screenshots for the private tools; submission form opened
+- **What changed:** evidence/neatlogs/ (three full-resolution trace screenshots and a README), README.md and this file's evidence wording.
+- **Decisions and why:** the builder chose screenshots over share links for the neatlogs and cfo.ai pages. The neatlogs screenshots were taken in the builder's signed-in Chrome; the cfo.ai screenshots were already in evidence/cfo-ai/. No share links were created and no page visibility was changed.
+- **Experiments / failures / fixes:** I opened the submission form at neatlogs.com/submission, clicked Continue on step 1 (it only saves a draft) and stopped at step 2, which needs the builder's check-in email and an emailed verification code. I did not enter an email or submit. The builder's quote post (x.com/ibnWeb3/status/2109644447700902337) quotes the official launch post, carries the video and tags @neatlogs, @EntireHQ and @arithecfo, as the form requires.
+- **Tests actually run:** none (no code).
+- **Evidence added:** evidence/neatlogs/.
+- **Next:** builder to confirm the check-in email and whether I may read the verification code from their Gmail; then fill the remaining form fields and submit only after a final review with the builder.
 
 ## 8. Demo details
 - **Length:** 3 min max. Must cover neatlogs, Entire and cfo.ai: architecture, implementation, runtime, reasoning, result for each.

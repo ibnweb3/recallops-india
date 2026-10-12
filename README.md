@@ -36,7 +36,7 @@ These results come from one fixture written by the same author as the matcher. T
 
 ## The three tools
 
-- **neatlogs**: the baseline and the agent run as separate workflows (`recallops-baseline`, `recallops-agent`), with workflow, agent, tool and model spans. Four traced runs; trace links are in [`hackathon.md`](hackathon.md) (private project).
+- **neatlogs**: the baseline and the agent run as separate workflows (`recallops-baseline`, `recallops-agent`), with workflow, agent, tool and model spans. Four traced runs; the workspace is private, so screenshots of the traces are in [`evidence/neatlogs/`](evidence/neatlogs) (trace ids are in [`hackathon.md`](hackathon.md)).
 - **Entire**: each build step is a checkpoint tied to the session. Command output is in [`evidence/entire/`](evidence/entire).
 - **cfo.ai**: a 12-month unit-economics and runway model from the measured token usage. Summary and screenshots in [`evidence/cfo-ai/`](evidence/cfo-ai). Human review, not model tokens, dominates cost under the stated assumptions (about 99.8% of direct cost). Prices, customers and review time are placeholders; no customer has validated them.
 
