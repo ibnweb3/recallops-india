@@ -201,6 +201,14 @@ Entry format:
 - **Evidence added:** evidence/neatlogs/.
 - **Next:** builder to confirm the check-in email and whether I may read the verification code from their Gmail; then fill the remaining form fields and submit only after a final review with the builder.
 
+### 2026-10-12 16:30 (IST) | submission received
+- **What changed:** hackathon.md section 10 only.
+- **Decisions and why:** the builder filled the last answers and submitted the form themselves, as agreed (I was not to submit without their go-ahead). I verified the result afterwards by reading the form page in their signed-in Chrome: it shows "SUBMISSION RECEIVED", the project name and the submission id. Not checked: the Luma web check-in status, which is separate, and how neatlogs will score the entry.
+- **Experiments / failures / fixes:** none.
+- **Tests actually run:** none (no code).
+- **Evidence added:** the post URL, the YouTube demo link and the submission id above.
+- **Next:** nothing required before the 11:55 PM IST cutoff; Discord has the final say on deadlines. Optional: a licence, and replacing the "work in progress" GitHub description.
+
 ## 8. Demo details
 - **Length:** 3 min max. Must cover neatlogs, Entire and cfo.ai: architecture, implementation, runtime, reasoning, result for each.
 - **Script:** one flowing narration of 13 scenes (problem, holds, why, review queue, second alert, customers, unresolved invoice lines, drafts, timeout recovery, neatlogs, Entire, cfo.ai, limits). Numbers spoken come from the real run artifacts. The narration and the recording tooling (a local case console, scripts, assets) are kept on the builder's machine under demo/ and are git-ignored on purpose: they are not part of the public repo.
@@ -225,7 +233,8 @@ Entry format:
 - [x] Repo public, commits verified (2026-10-12; viewed signed out in a browser: README, folders and the "Public" badge show. Final secret scan before the switch: no .env key value in 19 commits and 8 refs including 5 Entire checkpoint refs)
 - [x] Evidence folder in repo (evidence/: metrics, reports, entire, cfo-ai)
 - [x] Video link works (YouTube https://youtu.be/8an_y3CCGqg, public; checked loading signed out; an X upload is separate and not done by me)
-- [ ] Quote post drafted with: team, name, project, public repo, demo link, official neatlogs post kept attached (drafts with placeholders are kept locally in submission-drafts.md, which is git-ignored; the team name, demo link and the neatlogs post link are missing; nothing is posted)
-- [ ] Posted (time):
-- Post URL:
+- [x] Quote post drafted and posted by the builder: it quotes the official neatlogs launch post, carries the demo video and tags @neatlogs, @EntireHQ and @arithecfo (checked by reading the post).
+- [x] Posted (time): 2026-10-12, about 14:56 IST per the post's timestamp (2:56 PM on X).
+- Post URL: https://x.com/ibnWeb3/status/2109644447700902337
+- [x] Submission form: the builder submitted it on neatlogs.com/submission on 2026-10-12; the page shows "SUBMISSION RECEIVED" for RecallOps India, submission id 78a1f96c-63eb-4bd5-a356-cd798af06f5c (checked afterwards in the builder's signed-in session). The form answers I drafted were the project name, the post and repo links and the three tool write-ups; the builder gave the personal answers and pressed Submit.
 - Note: opening the draft alone does not submit. Do not submit without the builder's explicit go-ahead.
