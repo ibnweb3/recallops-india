@@ -209,6 +209,14 @@ Entry format:
 - **Evidence added:** the post URL, the YouTube demo link and the submission id above.
 - **Next:** nothing required before the 11:55 PM IST cutoff; Discord has the final say on deadlines. Optional: a licence, and replacing the "work in progress" GitHub description.
 
+### 2026-10-12 17:00 (IST) | MIT licence and repo description
+- **What changed:** LICENSE (MIT, "Copyright (c) 2026 ibnweb3"), the README licence section, and the GitHub repository description.
+- **Decisions and why:** the builder asked for MIT. I used the GitHub handle as the copyright holder because I do not have a legal name; the builder can change it. The README says the licence covers the code and synthetic fixtures, not the real CDSCO alert rows (public regulator data). The description was changed from "work in progress" to a final one-line summary.
+- **Experiments / failures / fixes:** none.
+- **Tests actually run:** none (no code).
+- **Evidence added:** none.
+- **Next:** nothing required.
+
 ## 8. Demo details
 - **Length:** 3 min max. Must cover neatlogs, Entire and cfo.ai: architecture, implementation, runtime, reasoning, result for each.
 - **Script:** one flowing narration of 13 scenes (problem, holds, why, review queue, second alert, customers, unresolved invoice lines, drafts, timeout recovery, neatlogs, Entire, cfo.ai, limits). Numbers spoken come from the real run artifacts. The narration and the recording tooling (a local case console, scripts, assets) are kept on the builder's machine under demo/ and are git-ignored on purpose: they are not part of the public repo.

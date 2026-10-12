@@ -90,4 +90,6 @@ Output goes to `runs/<name>/` (git-ignored): metrics, per-round reports, traced 
 
 Alert rows come from CDSCO's public NSQ alerts (the March 2025 PDF and the online portal, cdscoonline.gov.in). Everything else is generated.
 
-License: not yet chosen by the author.
+## License
+
+[MIT](LICENSE) for the code and the synthetic fixtures. The real CDSCO alert rows in `data/alerts/` are public regulator data and are not covered by this licence.
